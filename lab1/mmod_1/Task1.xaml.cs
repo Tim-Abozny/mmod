@@ -11,10 +11,10 @@ namespace mmod_1
     /// </summary>
     public partial class Task1 : Window
     {
-        public static class RandomNumberGenerator
+        public class RandomNumberGenerator
         {
-            public static Random random = new Random();
-            public static double GenerateEvent(double probability, int N, ListBox answersList)
+            public Random random = new Random();
+            public double GenerateEvent(double probability, int N, ListBox answersList)
             {
                 List<string> myList = new List<string>();
 
@@ -57,10 +57,11 @@ namespace mmod_1
 
         private void btn_ready_Click(object sender, RoutedEventArgs e)
         {
+            RandomNumberGenerator generator = new RandomNumberGenerator();
             answersList.Items.Clear();
             double probability = Double.Parse(probabilityTextBox.Text);
             int N = (int)Math.Pow(10, 6);
-            double empiricalProbability = RandomNumberGenerator.GenerateEvent(probability, N, answersList);
+            double empiricalProbability = generator.GenerateEvent(probability, N, answersList);
             probabilityRealTextBox.Text = empiricalProbability.ToString();
             answersList.Items.Add("Здесь могла быть ваша реклама");
         }

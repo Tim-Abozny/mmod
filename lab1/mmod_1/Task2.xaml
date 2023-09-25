@@ -13,5 +13,49 @@
                 <GradientStop Color="#FF3C0000" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
+        <Grid Margin="10,10,456,10">
+            <ListBox x:Name="probabilityListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,52,0,0" Foreground="White">
+                <ListBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0.819"/>
+                        <GradientStop Color="#FF440202" Offset="1"/>
+                    </LinearGradientBrush>
+                </ListBox.Background>
+            </ListBox>
+            <TextBox x:Name="probabilityTextBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="0,5" VerticalAlignment="Top" Width="120" FontFamily="Comic Sans MS" FontSize="20" Foreground="White">
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF3C0000"/>
+                        <GradientStop Color="Black" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.Background>
+            </TextBox>
+        </Grid>
+        <Grid Margin="456,10,10,10">
+            <ListBox x:Name="answerListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Foreground="White">
+                <ListBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0.819"/>
+                        <GradientStop Color="#FF440202" Offset="1"/>
+                    </LinearGradientBrush>
+                </ListBox.Background>
+            </ListBox>
+        </Grid>
+        <Button x:Name="btn_ready" Content="do" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="102" Foreground="White" FontFamily="Comic Sans MS" FontSize="20" Click="btn_ready_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.993"/>
+                    <GradientStop Color="#FF3A0EDA" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn_add" Content="add" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="95" Foreground="White" FontFamily="Comic Sans MS" FontSize="20" RenderTransformOrigin="-0.408,-1.899" Margin="233,10,0,0" Click="btn_add_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.993"/>
+                    <GradientStop Color="#FF3A0EDA" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>
