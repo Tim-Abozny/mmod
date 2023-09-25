@@ -5,6 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mmod_1"
         mc:Ignorable="d"
-        Title="Task1" Height="450" Width="800" Closed="Window_Closed">
-    <Grid/>
+        Title="Task1" Height="476" Width="528" Closed="Window_Closed" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF3C0000" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="probability:" HorizontalAlignment="Left" Margin="35,29,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="20" Foreground="White"/>
+        <TextBox x:Name="probabilityTextBox" HorizontalAlignment="Left" Margin="234,33,0,0" TextWrapping="Wrap" Text="0,5" VerticalAlignment="Top" Width="120" FontFamily="Comic Sans MS" FontSize="20" Foreground="White">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3C0000"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Button x:Name="btn_ready" Content="do" HorizontalAlignment="Left" Margin="389,34,0,0" VerticalAlignment="Top" Height="50" Width="110" Foreground="White" FontFamily="Comic Sans MS" FontSize="20" Click="btn_ready_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.993"/>
+                    <GradientStop Color="#FF3A0EDA" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Content="probability (real):" HorizontalAlignment="Left" Margin="35,89,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="20" Foreground="White"/>
+        <TextBox x:Name="probabilityRealTextBox" HorizontalAlignment="Left" Margin="234,93,0,0" TextWrapping="Wrap" Text="ok ok ok" VerticalAlignment="Top" Width="120" FontFamily="Comic Sans MS" FontSize="20" Foreground="White">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3C0000"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Grid Margin="35,148,157,10">
+            <ListBox x:Name="answersList" d:ItemsSource="{d:SampleData ItemCount=5}" Background="Black" Foreground="White" FontSize="15" FontFamily="Comic Sans MS"/>
+        </Grid>
+    </Grid>
 </Window>

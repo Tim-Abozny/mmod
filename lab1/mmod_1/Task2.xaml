@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mmod_1"
         mc:Ignorable="d"
-        Title="Task2" Height="450" Width="800">
+        Title="Task2" Height="450" Width="800" Closed="Window_Closed" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF3C0000" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
     </Grid>
 </Window>

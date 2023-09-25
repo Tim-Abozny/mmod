@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mmod_1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="197" Width="301" Closed="myOwnWindow_Closed">
+        Title="MainWindow" Height="197" Width="308" Closed="myOwnWindow_Closed" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
