@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Windows;
+using static mmod_1.Task3;
 
 namespace mmod_1
 {
@@ -42,7 +43,7 @@ namespace mmod_1
                         return i;
                     }
                 }
-
+                myValue = randomValue;
                 return probabilities.Count - 1; // Вернуть индикатор последнего события, если ничего другого не выбрано
             }
 
@@ -55,13 +56,44 @@ namespace mmod_1
 
         private void btn_ready_Click(object sender, RoutedEventArgs e)
         {
+            AsnwersListBox.Items.Clear();
+            myValue = 0;
             List<double> probabilities = new List<double>();
             foreach (var item in probabilityListBox.Items)
             {
                 probabilities.Add(double.Parse(item.ToString()));
             }
-            indicatorTextBox.Text = ProbabilityBasedEventGenerator.GenerateEventIndicator(probabilities).ToString();
+            indicatorTextBox.Text = (ProbabilityBasedEventGenerator.GenerateEventIndicator(probabilities) + 1).ToString();
             valueTextBox.Text = myValue.ToString();
+            
+            Dictionary<int, int> indicatorCounts = new Dictionary<int, int>();
+
+            for (int i = 0; i < 1000000; i++)
+            {
+                int eventIndicator = ProbabilityBasedEventGenerator.GenerateEventIndicator(probabilities);
+
+                if (indicatorCounts.ContainsKey(eventIndicator))
+                {
+                    indicatorCounts[eventIndicator]++;
+                }
+                else
+                {
+                    indicatorCounts[eventIndicator] = 1;
+                }
+
+                AsnwersListBox.Items.Add((eventIndicator + 1).ToString() + ") " + myValue.ToString());
+                myValue = 0;
+            }
+
+            foreach (var kvp in indicatorCounts)
+            {
+                AsnwersListBox.Items.Add("Индикатор " + (kvp.Key + 1).ToString() + ": " + kvp.Value.ToString() + " раз");
+            }
+
+
+
+
+
         }
     }
 }

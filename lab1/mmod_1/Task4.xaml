@@ -65,5 +65,15 @@
                 </LinearGradientBrush>
             </TextBox.Background>
         </TextBox>
+        <Grid Margin="479,0,0,0">
+            <ListBox x:Name="AsnwersListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,32,10,31" Foreground="White">
+                <ListBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0.819"/>
+                        <GradientStop Color="#FF440202" Offset="1"/>
+                    </LinearGradientBrush>
+                </ListBox.Background>
+            </ListBox>
+        </Grid>
     </Grid>
 </Window>

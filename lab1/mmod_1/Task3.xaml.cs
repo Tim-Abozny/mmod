@@ -88,7 +88,7 @@ namespace mmod_1
             p4_abList.Items.Clear();
 
             double probability = double.Parse(probabilityTextBox.Text);
-            double condProb = double.Parse(probabilityTextBox.Text);
+            double condProb = double.Parse(condProbability.Text);
 
             indicatorTextBox.Text = EventGenerator.SimulateComplexEvent(probability, condProb).ToString();
 
